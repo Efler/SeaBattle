@@ -1,6 +1,223 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXProgressBar?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 
-
-<VBox fx:id="preparingSceneVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.eflerrr.seabattle.client.PreparingSceneController" />
+<VBox fx:id="preparingSceneVBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@css/preparing.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.eflerrr.seabattle.client.controller.PreparingSceneController">
+   <children>
+      <Label fx:id="preparingSceneTitle" minHeight="30.0" minWidth="100.0" text="Подготовка" textAlignment="CENTER">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <font>
+            <Font size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="500.0" prefWidth="600.0">
+         <children>
+            <GridPane fx:id="preparingSceneGridPane" alignment="CENTER" depthTest="DISABLE" hgap="5.0" maxHeight="300.0" maxWidth="300.0" minHeight="300.0" minWidth="300.0" prefHeight="300.0" prefWidth="300.0" scaleShape="false" vgap="5.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <opaqueInsets>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin>
+               <children>
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.RowIndex="0" GridPane.columnIndex="0" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="4" GridPane.rowIndex="0" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="5" GridPane.rowIndex="0" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="6" GridPane.rowIndex="0" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="7" GridPane.rowIndex="0" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="8" GridPane.rowIndex="0" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="9" GridPane.rowIndex="0" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="8" GridPane.rowIndex="1" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="9" GridPane.rowIndex="1" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="8" GridPane.rowIndex="2" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="9" GridPane.rowIndex="2" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="7" GridPane.rowIndex="3" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="8" GridPane.rowIndex="3" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="9" GridPane.rowIndex="3" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="7" GridPane.rowIndex="4" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="8" GridPane.rowIndex="4" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="9" GridPane.rowIndex="4" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="7" GridPane.rowIndex="5" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="8" GridPane.rowIndex="5" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="9" GridPane.rowIndex="5" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="6" GridPane.rowIndex="6" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="7" GridPane.rowIndex="6" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="8" GridPane.rowIndex="6" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="9" GridPane.rowIndex="6" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="6" GridPane.rowIndex="7" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="7" GridPane.rowIndex="7" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="8" GridPane.rowIndex="7" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="9" GridPane.rowIndex="7" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="6" GridPane.rowIndex="8" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="7" GridPane.rowIndex="8" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="8" GridPane.rowIndex="8" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="9" GridPane.rowIndex="8" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="5" GridPane.rowIndex="9" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="6" GridPane.rowIndex="9" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="7" GridPane.rowIndex="9" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="8" GridPane.rowIndex="9" />
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCellClicked" styleClass="emptyCell" text=" " GridPane.columnIndex="9" GridPane.rowIndex="9" />
+               </children>
+            </GridPane>
+            <VBox alignment="TOP_CENTER">
+               <children>
+                  <Label fx:id="preparingSceneLittleTitle" text="Этап 1">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="preparingSceneTaskLabel" prefHeight="54.0" prefWidth="154.0" text="Расставьте 4х-палубные корабли" wrapText="true">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="preparingSceneCountLabel" text="1">
+                     <font>
+                        <Font size="43.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="preparingSceneDescriptionLabel" text="осталось">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox fx:id="preparingSceneErrorHBox" alignment="CENTER">
+                     <children>
+                        <FontIcon fx:id="preparingSceneErrorIcon" iconColor="RED" iconLiteral="bi-exclamation-square" iconSize="25">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </FontIcon>
+                        <Label fx:id="preparingSceneErrorLabel" maxWidth="120.0" text="Ошибка!" textFill="RED" wrapText="true">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <MFXButton fx:id="preparingSceneConfirmButton" buttonType="RAISED" depthLevel="LEVEL4" onAction="#onConfirmClicked" text="Установить" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <MFXProgressBar fx:id="preparingSceneProgressBar" maxWidth="1.7976931348623157E308" minHeight="10.0" prefHeight="10.0" prefWidth="600.0" progress="0.0">
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </MFXProgressBar>
+   </children>
+</VBox>

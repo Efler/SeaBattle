@@ -1,0 +1,7 @@
+.chosenCell {
+    -fx-background-color: black;
+}
+
+.emptyCell {
+    -fx-background-color: white;
+}

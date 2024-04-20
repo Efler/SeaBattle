@@ -2,13 +2,15 @@ package org.eflerrr.seabattle.server;
 
 import org.apache.commons.lang3.tuple.Pair;
 
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.*;
 import java.util.concurrent.*;
 
-// TODO! CHECK UNUSED SOCKETS!
+// TODO: check unused sockets!
 
 public class Server {
     private static final int PLAYER_READY_STATUS = 0;
@@ -17,7 +19,7 @@ public class Server {
     private static final int PLAYER_OPPONENT = 10;
     private static final int BOT_OPPONENT = 11;
 
-    private static ServerSocket serverSocket = null; // TODO! CHECK IF USED, OTHERWISE DELETE!
+    private static ServerSocket serverSocket = null;    // TODO: check if used, otherwise delete!
     private static ExecutorService service = null;
 
 
@@ -33,7 +35,7 @@ public class Server {
                 Battleground firstBattleground, DataInputStream firstClientReader, DataOutputStream firstClientWriter,
                 Battleground secondBattleground, DataInputStream secondClientReader, DataOutputStream secondClientWriter
         ) {
-            // TODO!!! BATTLE LOGIC!
+            // TODO: make battle logic!
             System.out.println("#1");
             System.out.println(firstBattleground);
             System.out.println("#2");
@@ -96,8 +98,7 @@ public class Server {
                 int winnerId = battle(
                         battlegrounds.getFirst().getLeft(), firstClientReader, firstClientWriter,
                         battlegrounds.getLast().getLeft(), secondClientReader, secondClientWriter);
-                // TODO!!! GO! GO! GO!
-                System.out.println("WOW!!!\n");
+                // TODO: run battle!
                 Thread.sleep(20000);
 
             } catch (InterruptedException | ExecutionException | IOException e) {
@@ -120,7 +121,7 @@ public class Server {
         private int battle(
                 Battleground clientBattleground, Battleground botBattleground
         ) {
-            // TODO!!! BATTLE LOGIC!
+            // TODO: battle logic!
             System.out.println("#PLAYER");
             System.out.println(clientBattleground);
             System.out.println("#BOT");
@@ -129,7 +130,7 @@ public class Server {
         }
 
         private Battleground generateBattleground() {
-            // TODO!!! ALGORITHM!
+            // TODO: implement!
             var random = new Random();
 
             return null;
@@ -147,8 +148,7 @@ public class Server {
                 clientWriter.writeInt(SECOND_PLAYER_STATUS);
 
                 int winnerId = battle(clientBattleground, botBattleground);
-                // TODO!!! GO! GO! GO!
-                System.out.println("WOW-BOT!!!\n");
+                // TODO: run battle!
                 Thread.sleep(20000);
 
             } catch (InterruptedException | ExecutionException | IOException e) {
@@ -177,16 +177,14 @@ public class Server {
             for (var x : coords.stream().map(Pair::getLeft).toList()) {
                 if (tmpX < 0) {
                     tmpX = x;
-                }
-                else {
+                } else {
                     if (tmpX != x) {
                         angle = true;
                         int tmpY = -1;
                         for (var y : coords.stream().map(Pair::getRight).toList()) {
                             if (tmpY < 0) {
                                 tmpY = y;
-                            }
-                            else {
+                            } else {
                                 if (tmpY != y) {
                                     return false;
                                 }
@@ -198,7 +196,7 @@ public class Server {
 
             var secondCoords = coords.stream().map(angle ? Pair::getLeft : Pair::getRight).sorted().toList();
             for (int i = 1; i < secondCoords.size(); ++i) {
-                if (secondCoords.get(i) - secondCoords.get(i-1) != 1) {
+                if (secondCoords.get(i) - secondCoords.get(i - 1) != 1) {
                     return false;
                 }
             }
@@ -209,23 +207,19 @@ public class Server {
         public Pair<Battleground, Integer> call() throws IOException {
             while (true) {
                 int count = playerReader.readInt();
-                System.out.printf("DEBUG: count in PlayerHandler - %d%n", count); //TODO!!! %%%%%%%%%%%%%%%%%#$@$#
                 var coords = new ArrayList<Pair<Integer, Integer>>();
                 for (int i = 0; i < count; ++i) {
                     int x = playerReader.readInt();
                     int y = playerReader.readInt();
-                    System.out.printf("DEBUG: get coords in PlayerHandler - <%d;%d>%n", x, y); //TODO!!! %%%%%%%%%%%%%%%%%#$@$#
                     coords.add(Pair.of(x, y));
                 }
                 if (!checkShipShape(coords)) {
-                    playerWriter.writeInt(1); // TODO! STATUSES!
-                }
-                else {
+                    playerWriter.writeInt(1);   // TODO: statuses!
+                } else {
                     battleground.placeShip(coords);
                     if (!battleground.isReady()) {
                         playerWriter.writeInt(0);
-                    }
-                    else {
+                    } else {
                         playerWriter.writeInt(-1);
                         return Pair.of(battleground, id);
                     }
@@ -251,14 +245,12 @@ public class Server {
                     if (chosenOppId == BOT_OPPONENT) {
                         clientWriter.writeInt(SECOND_PLAYER_STATUS);
                         service.execute(new GameVsBotHandler(clientSocket, clientReader, clientWriter));
-                    }
-                    else if (chosenOppId == PLAYER_OPPONENT) {
+                    } else if (chosenOppId == PLAYER_OPPONENT) {
                         var waitingClient = waitingClients.pollFirst();
                         if (waitingClient == null) {
                             clientWriter.writeInt(FIRST_PLAYER_STATUS);
                             waitingClients.add(clientSocket);
-                        }
-                        else {
+                        } else {
                             clientWriter.writeInt(SECOND_PLAYER_STATUS);
                             DataInputStream waitingClientReader = new DataInputStream(waitingClient.getInputStream());
                             DataOutputStream waitingClientWriter = new DataOutputStream(waitingClient.getOutputStream());
@@ -267,8 +259,7 @@ public class Server {
                                     waitingClient, waitingClientReader, waitingClientWriter,
                                     clientSocket, clientReader, clientWriter));
                         }
-                    }
-                    else {
+                    } else {
                         System.out.println("Invalid message from client!");
                         clientSocket.close();
                     }

@@ -16,10 +16,13 @@ import org.eflerrr.seabattle.client.ClientApplication;
 import org.kordamp.ikonli.javafx.FontIcon;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentSkipListSet;
 
-//TODO! MAKE A CHANGING preparingSceneErrorIcon TO A PROGRESS SPINNER!
+// TODO: make a changing preparingSceneErrorIcon to a progress spinner!
 
 public class PreparingSceneController {
     @FXML
@@ -62,7 +65,7 @@ public class PreparingSceneController {
 
 
     public void onCellClicked(ActionEvent actionEvent) {
-        var cell = (MFXButton)actionEvent.getSource();
+        var cell = (MFXButton) actionEvent.getSource();
         var cellCoords = Pair.of(
                 GridPane.getRowIndex(cell),
                 GridPane.getColumnIndex(cell)
@@ -75,8 +78,7 @@ public class PreparingSceneController {
             selectedCellsCoords.add(cellCoords);
             cellStyles.removeLast();
             cellStyles.add("chosenCell");
-        }
-        else if (cellStyles.getLast().equals("chosenCell")) {
+        } else if (cellStyles.getLast().equals("chosenCell")) {
             ++cellsAvailable;
             selectedCellsObjects.remove(cell);
             selectedCellsCoords.remove(cellCoords);
@@ -94,10 +96,10 @@ public class PreparingSceneController {
     }
 
     public void onConfirmClicked(ActionEvent actionEvent) {
-        if (!preparingSceneErrorHBox.isVisible()) {                      // TODO!!! REFACTOR!
-            preparingSceneErrorHBox.setVisible(true);                    // TODO!!! REFACTOR!
-        }                                                                // TODO!!! REFACTOR!
-        preparingSceneErrorLabel.setText("Waiting server response...");  // TODO!!! REFACTOR!
+        if (!preparingSceneErrorHBox.isVisible()) {                      // TODO: refactor!
+            preparingSceneErrorHBox.setVisible(true);                    // TODO: refactor!
+        }                                                                // TODO: refactor!
+        preparingSceneErrorLabel.setText("Waiting server response...");  // TODO: refactor!
         Task<Integer> task = new Task<>() {
             @Override
             protected Integer call() throws IOException {
@@ -133,8 +135,7 @@ public class PreparingSceneController {
                 if (shipsAvailable > 0) {
                     cellsAvailable = cellsInShip;
                     Platform.runLater(() -> preparingSceneCountLabel.setText(String.format("%d", shipsAvailable)));
-                }
-                else {
+                } else {
                     if (step < 4) {
                         ++step;
                         shipsAvailable = step;
@@ -146,16 +147,14 @@ public class PreparingSceneController {
                             preparingSceneTaskLabel.setText(String.format("Расставьте %dх-палубные корабли", cellsInShip));
                             preparingSceneCountLabel.setText(String.format("%d", shipsAvailable));
                         });
-                    }
-                    else {
+                    } else {
                         Platform.runLater(() ->
                                 preparingSceneProgressBar.setProgress(preparingSceneProgressBar.getProgress() + 0.25)
                         );
                         ClientApplication.lastPreparing();
                     }
                 }
-            }
-            else {
+            } else {
                 if (!preparingSceneErrorHBox.isVisible()) {
                     preparingSceneErrorHBox.setVisible(true);
                 }

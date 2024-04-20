@@ -49,7 +49,8 @@ public class MainSceneController {
     }
 
     public void onRulesClick(ActionEvent actionEvent) {
-        // TODO!
+
+        // TODO: impl!
 
         Scene currentScene = ((Node) (actionEvent.getSource())).getScene();
         System.out.printf("%f %f%n", currentScene.getWidth(), currentScene.getHeight());

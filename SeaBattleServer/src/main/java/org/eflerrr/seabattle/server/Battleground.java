@@ -29,7 +29,7 @@ public class Battleground {
     public void placeShip(Collection<Pair<Integer, Integer>> cells) {
         var ship = new Ship(cells);
         ships.add(ship);
-        for (var cell: cells) {
+        for (var cell : cells) {
             battlegroundCells.get(cell.getLeft()).set(cell.getRight(), ship);
         }
         if (ships.size() == 10) {

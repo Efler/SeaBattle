@@ -24,8 +24,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class ClientApplication extends Application {
     public enum Opponent {
-        PLAYER (10),
-        BOT (11);
+        PLAYER(10),
+        BOT(11);
         private final int id;
 
         Opponent(int id) {
@@ -36,16 +36,16 @@ public class ClientApplication extends Application {
             return id;
         }
     }
+
     public static Opponent chosenOpp = Opponent.PLAYER;
     private static Stage mainStage = null;
     private static Socket socket = null;
     private static DataInputStream serverReader = null;
     private static DataOutputStream serverWriter = null;
-    private static ExecutorService service = null;  //TODO! CHECK USAGE! OTHERWISE DELETE!
+    private static ExecutorService service = null;      // TODO: check usage, overwise delete!
 
 
     private static void closeConnection() {
-        System.out.println("Closing started...");   // debug
         try {
             if (serverReader != null) {
                 serverReader.close();
@@ -67,7 +67,6 @@ public class ClientApplication extends Application {
         } catch (IOException ioEx) {
             System.out.printf("Invalid socket closing! Message: %s%n", ioEx.getMessage());
         }
-        System.out.println("Closing successfully finished!");   // debug
     }
 
     private static void loadingProcess(String message, String sceneFile, int sec, Label label)
@@ -90,26 +89,25 @@ public class ClientApplication extends Application {
             @Override
             protected Void call() throws IOException, InterruptedException {
                 var response = serverReader.readInt();
-                var errorHBox = (HBox)(((VBox)(((HBox)(((VBox) (
+                var errorHBox = (HBox) (((VBox) (((HBox) (((VBox) (
                         mainStage.getScene().getRoot())).getChildren().get(1))).getChildren().get(1))).getChildren().get(4));
                 if (response == 1) {
                     if (!errorHBox.isVisible()) {
                         Platform.runLater(() -> errorHBox.setVisible(true));
                     }
-                    // TODO! CHANGE COLOR!
-                    Platform.runLater(() -> ((Label)(errorHBox.getChildren().getLast())).setText("Ждём соперника..."));
+                    // TODO: change color!
+                    Platform.runLater(() -> ((Label) (errorHBox.getChildren().getLast())).setText("Ждём соперника..."));
                     response = serverReader.readInt();
                     if (response == 0) {
                         loadingProcess("Соперник готов, начинаем сражение через", "battleScene.fxml",
-                                3, ((Label)(errorHBox.getChildren().getLast())));
+                                3, ((Label) (errorHBox.getChildren().getLast())));
                     }
-                }
-                else {
+                } else {
                     if (!errorHBox.isVisible()) {
                         Platform.runLater(() -> errorHBox.setVisible(true));
                     }
                     loadingProcess("Отлично, начинаем сражение через", "battleScene.fxml",
-                            3, ((Label)(errorHBox.getChildren().getLast())));
+                            3, ((Label) (errorHBox.getChildren().getLast())));
                 }
                 return null;
             }
@@ -141,7 +139,7 @@ public class ClientApplication extends Application {
                 @Override
                 protected Void call() {
                     try {
-                        serverWriter.writeInt(chosenOpp.getId());   // TODO! [new]
+                        serverWriter.writeInt(chosenOpp.getId());   // TODO: [new]
                         int connectionNumber = serverReader.readInt();
                         if (connectionNumber == 1) {
                             Platform.runLater(() -> label.setText("Ждём соперника..."));
@@ -152,8 +150,7 @@ public class ClientApplication extends Application {
                                 closeConnection();
                                 return null;
                             }
-                        }
-                        else if (connectionNumber != 2) {
+                        } else if (connectionNumber != 2) {
                             loadingProcess("Ошибка сервера, возврат через", "mainScene.fxml",
                                     3, label);
                             closeConnection();

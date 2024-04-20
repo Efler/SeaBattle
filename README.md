@@ -2,3 +2,7 @@
 ___
 
 ## Desktop multiplayer application using `JavaFX` with `MaterialFX` *(abandoned)*
+
+*preview*
+
+![preview](resources/preview.png)

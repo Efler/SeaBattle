@@ -1,3 +1,4 @@
 # *Sea Battle Game*
 ___
-## desktop multiplayer application using JavaFX with MaterialFX
+
+## Desktop multiplayer application using `JavaFX` with `MaterialFX` *(abandoned)*
